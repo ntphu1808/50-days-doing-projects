@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+}
+* {
+    box-sizing: border-box;
+}
+:root {
+    --background-left-overlay: rgba(87, 84, 236, 0.7);
+    --background-right-overlay: rgba(43, 43, 43, 0.8);
+    --left-btn-hover-color: rgba(87, 84, 236, 1);
+    --right-btn-hover-color: rgba(28, 122, 28, 1); 
+}
+.container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background: #333;
+}
+.split {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    transition: width 0.7s ease-in-out;
+}
+h1 {
+    font-size: 40px;
+    color: white;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+a {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+    border: white 1px solid;
+    width: 15rem;
+    padding: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+}
+.left a:hover {
+    background-color: var(--left-btn-hover-color);
+    border-color: var(--left-btn-hover-color);
+}
+.right a:hover {
+    background-color: var(--right-btn-hover-color);
+    border-color: var(--right-btn-hover-color);
+}
+.left {
+    left: 0;
+    background-image: url('ps.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.left::before {
+    content: "";
+    background-color: var(--background-left-overlay);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.right {
+    right: 0;
+    background-image: url('xbox.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+.right::before {
+    content: "";
+    background-color: var(--background-right-overlay);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.split.left:hover {
+    width: 75%;
+}
+.split.left:hover + .split.right {
+    width: 25%;
+}
+.split.right:hover {
+    width: 75%;
+}
+.split.right:hover ~ .split.left {
+    width: 25%;
+}
+
+@media only screen and (max-width: 800px) {
+    h1 {
+        font-size: 2rem;
+    }
+    a {
+        font-size: 1rem;
+        padding: 1.2rem;
+        width: 120px;
+    }
+}

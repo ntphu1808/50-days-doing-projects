@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    display: grid;
+    text-align: center;
+    align-items: center;
+    height: 100vh;
+    background-color: steelblue;
+}
+* {
+    box-sizing: border-box;
+}
+.container {
+    background-color: rgba(0, 0, 0, 0.4);
+    width: fit-content;
+    margin: 0 auto;
+    width: 25vw;
+    padding: 30px;
+    text-align: left;
+    color: white;
+    border-radius: 5px;
+}
+h1 {
+    text-align: center;
+}
+input[type="email"], input[type="password"] {
+    background-color: transparent;
+    border: 0;
+    border-bottom: 2px white solid;
+    outline: none;
+    display: block;
+    width: 100%;
+    padding-left: 0;
+    padding-bottom: 15px;
+    color: white;
+}
+input[type="email"]:focus, input[type="password"]:focus,
+input[type="email"]:valid, input[type="password"]:valid {
+    border-bottom-color: lightblue;
+}
+input[type="email"]:focus + label span, input[type="password"]:focus + label span,
+input[type="email"]:valid + label span, input[type="password"]:valid + label span{
+    color: lightblue;
+    transform: translateY(-30px);
+}
+.form-control label span {
+    display: inline-block;  /* each span has to be displayed as inline-block so the transition could work correctly */
+    transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+.form-control {
+    margin-top: 50px;
+    margin-bottom: 40px;
+    position: relative;
+    font-size: 1.1rem;
+}
+.form-control > label {
+    position: absolute;
+    top: 0;
+    pointer-events: none; /*Set the pointer-event of the label to none so that when we can't hover or have a click event on the label*/
+}
+input[type="submit"] {
+    display: block;
+    width: 100%;
+    background-color: lightblue;
+    outline: none;
+    border: none;
+    padding: 18px 0;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
+input[type="submit"]:focus {
+    transform: scale(0.98);
+}
+a {
+    text-decoration: none;
+    color: lightblue;
+}

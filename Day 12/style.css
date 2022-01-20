@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    background-color: #f1f1f1f1;
+}
+* {
+    box-sizing: border-box;
+}
+h1 {
+    text-align: center;
+}
+.container {
+    width: 40vw;
+    margin: 10px auto;
+    
+}
+.faq {
+    border: grey 1px solid;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 5px;
+    position: relative;
+    transition: all 0.4s ease;
+}
+.faq-title {
+    margin-top: 0;
+}
+.faq-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    border: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    background-color: unset;
+}
+.fas.fa-times-circle {
+    font-size: 1.5rem;
+    color: grey;
+}
+.far.fa-comments {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 7rem;
+    color: green;
+    opacity: 0.2;
+    z-index: -1;
+    display: none;
+}
+.faq.active > .far.fa-comments {
+    display: block;
+}
+.faq.active::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 5px;
+    z-index: -2;
+}
+.faq.active .fas.fa-chevron-down {
+    display: none;
+}
+.fas.fa-chevron-down {
+    display: block;
+    transform: translateX(-50%);
+}
+.faq.active .fas.fa-times-circle {
+    display: block;
+}
+.fas.fa-times-circle {
+    display: none;
+}
+.faq-text {
+    display: none;
+}
+.faq.active .faq-text {
+    display: block;
+}

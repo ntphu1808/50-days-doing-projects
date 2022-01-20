@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    display: grid;
+    text-align: center;
+    align-content: center;
+    height: 100vh;
+}
+* {
+    box-sizing: border-box;
+}
+.container {
+    text-align: center;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    margin: 0 auto;
+    row-gap: 10px;
+}
+.progressContainer {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, 30px);
+    column-gap: 50px;
+    align-items: center;
+}
+.progressBar {
+    position: absolute;
+    top: 50%;
+    height: 3px;
+    width: 0;
+    background-color: green;
+    z-index: -2;
+    transform: translateY(-50%);
+    transition: 0.7s ease;
+}
+.progressContainer::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    height: 3px;
+    width: 100%;
+    background-color: grey;
+    z-index: -2;
+    transform: translateY(-50%);
+    
+}
+.button {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+    column-gap: 20px;
+}
+button {
+    background-color: green;
+    border: 0;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+}
+button:active {
+    transform: scale(0.98);
+}
+button:disabled {
+    background-color: grey;
+    cursor: not-allowed;
+}
+.steps {
+    display: grid;
+    align-items: center;
+    height: 30px;
+    width: 30px;
+    border: 3px grey solid;
+    border-radius: 50%;
+    background-color: white;
+    transition: 2s ease;
+}
+.steps.active {
+    border: 3px green solid;
+}

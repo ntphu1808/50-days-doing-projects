@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    display: grid;
+    text-align: center;
+    align-content: center;
+    height: 100vh;
+    background-color: rgb(161, 100, 223);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.btn {
+    background-color: rebeccapurple;
+    border: none;
+    outline: none;
+    margin: 10px;
+    color: white;
+    padding: 30px 60px;
+    cursor: pointer;
+    font-size: larger;
+    border-radius: 5px;
+}
+.btn:hover {
+    opacity: 0.8;
+}
