@@ -1,9 +1,9 @@
 const text=document.getElementById("textarea");
 const tagsEl=document.querySelector(".tags");
 
-text.focus();
+text.focus(); //focus on the textarea right after accessing the website
 
-function createTag (input) {  
+function createTag (input) {        //create little small tags below the textarea element whenever the user types something on the box
     const tags=input.split(",").filter(tag => tag.trim() != "").map(tag => tag.trim());
     tagsEl.innerHTML="";
 
@@ -16,8 +16,8 @@ function createTag (input) {
 };
 
 
-text.addEventListener("keyup", (event) => {
-    if (event.key === "Enter") {
+text.addEventListener("keyup", (event) => {    //if the user types on the box words, then it's going to call the createTag function, if the user hits enter, then it's
+    if (event.key === "Enter") {                // going to clear all the words inside the textarea box, then it's choosing random tag to hightlight.
         text.value="";
         const tagEl = document.querySelectorAll(".tag");
         tagEl.forEach(tag => tag.classList.remove("active"));
@@ -41,12 +41,12 @@ text.addEventListener("keyup", (event) => {
 
 
 
-function pickTag() {
+function pickTag() {    //Using math.random to pick a random index for choosing the specific child tag of the tagsEl
     const random_index=Math.floor(Math.random()*tagsEl.children.length);
     return tagsEl.children[random_index];
 };
 
-function hightLigthToggle (tag) {  
+function hightLigthToggle (tag) {    //Hight light the tag and wait for 100ms later to unhightlight the tag.
     tag.classList.add("active");
     setTimeout(() => {
         tag.classList.remove("active");

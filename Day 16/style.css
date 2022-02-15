@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+:root {
+    --background-blue: #3494e4;
+    --border-color: #144fc6;
+    --fill-color: #6ab3f8;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    display: grid;
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: var(--background-blue);
+}
+* {
+    box-sizing: border-box;
+}
+h1, p {
+    color: white;
+}
+h3 {
+    margin: 0;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.cup {
+    border: var(--border-color) 4px solid;
+    color: var(--border-color);
+    background-color: white;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+.big-cup {
+    width: 150px;
+    height: 300px;
+}
+.cup.big-cup {
+    border-radius: 0 0 40px 40px;
+    flex-direction: column;
+}
+.cup-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+}
+.small-cup {
+    width: 50px;
+    height: 100px;    
+}
+.cup.small-cup {
+    border-radius: 0 0 20px 20px;
+    transition: background-color 0.4s linear;
+    cursor: pointer;
+}
+.cup-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+.quantity {
+    width: 100%;
+    height: 0;
+}
+div.quantity {
+    border-radius: 0 0 36px 36px;
+    background-color: var(--fill-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    transition: height 0.4s linear;
+    overflow: hidden;
+}
+.small-cup.filled {
+    background-color: var(--fill-color);
+    color: white;
+}
