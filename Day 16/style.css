@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 :root {
-    --background-blue: #3494e4;
+    --background-color: #3494e4;
     --border-color: #144fc6;
     --fill-color: #6ab3f8;
 }
@@ -10,77 +10,82 @@ body {
     display: grid;
     text-align: center;
     align-content: center;
-    justify-content: center;
     height: 100vh;
-    background-color: var(--background-blue);
+    background-color: var(--background-color);
 }
 * {
     box-sizing: border-box;
 }
-h1, p {
-    color: white;
+/*===================Structure=========================== */ 
+
+.big-cup {
+    width: 150px;
+    height: 330px;
+    margin: 0 auto;
+    border-radius: 0 0 40px 40px;
+    overflow-y: hidden;
 }
-h3 {
+.small-cup {
+    width: 50px;
+    height: 80px;
+    border-radius: 0 0 15px 15px;
+}
+.cup-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin: 0 auto;
+    width: fit-content;
+    gap: 10px;
+}
+.water {
+    height: 0;
+    width: 100%;
     margin: 0;
-}
-.container {
+    overflow: hidden;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
-.cup {
-    border: var(--border-color) 4px solid;
-    color: var(--border-color);
-    background-color: white;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-}
-.big-cup {
-    width: 150px;
-    height: 300px;
-}
-.cup.big-cup {
-    border-radius: 0 0 40px 40px;
-    flex-direction: column;
-}
-.cup-text {
+.label {
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     overflow: hidden;
+    margin: 0;
 }
-.small-cup {
-    width: 50px;
-    height: 100px;    
-}
-.cup.small-cup {
-    border-radius: 0 0 20px 20px;
-    transition: background-color 0.4s linear;
-    cursor: pointer;
-}
-.cup-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-}
-.quantity {
-    width: 100%;
-    height: 0;
-}
-div.quantity {
-    border-radius: 0 0 36px 36px;
-    background-color: var(--fill-color);
+/*==================Skin===================================== */
+.cup {
+    background-color: white;
+    border: var(--border-color) 4px solid;
+    color: var(--border-color);
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+.small-cup {
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+}
+.title, p {
+    color: white;
+}
+.liters-remained, .small-cup {
+    color: var(--border-color);
+}
+.liters-remained {
+    margin: 0;
     font-size: 1.5rem;
-    transition: height 0.4s linear;
-    overflow: hidden;
 }
 .small-cup.filled {
     background-color: var(--fill-color);
     color: white;
+}
+.water {
+    background-color: var(--fill-color);
+    border-radius: 0 0 36px 36px;
+    transition: height 0.3s linear;
+    font-size: 1.5rem;
+    font-weight: 600;
 }

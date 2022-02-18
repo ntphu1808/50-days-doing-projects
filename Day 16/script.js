@@ -1,10 +1,9 @@
-const cupText = document.querySelector(".cup-text")
-const bigCup = document.querySelector(".big-cup")
-const quantity = document.querySelector(".quantity")
-const smallCup = document.querySelectorAll(".small-cup")
-const liter = document.querySelector(".liter-remained")
+const remainEl = document.querySelector(".liters-remained")
+const waterEl = document.querySelector(".water")
+const cups = document.querySelectorAll(".small-cup")
+const labelEl = document.querySelector(".label")
 
-smallCup.forEach((cup, index) => {
+cups.forEach((cup, index) => {
     cup.addEventListener("click", () => {
         fillSmallCup(index)
         updateBigCup()
@@ -12,10 +11,10 @@ smallCup.forEach((cup, index) => {
 })
 
 function fillSmallCup(index) {
-    if (smallCup[index].classList.contains("filled") && !smallCup[index].nextElementSibling.classList.contains("filled")) {
+    if (cups[index].classList.contains("filled") && !cups[index+1].classList.contains("filled")) {
         index--
     }
-    smallCup.forEach((cup, index2) => {
+    cups.forEach((cup, index2) => {
         if (index2 <= index) {
             cup.classList.add("filled")
         } else {
@@ -23,9 +22,12 @@ function fillSmallCup(index) {
         }
     })
 }
-function updateBigCup () {
-    const fullCups=document.querySelectorAll(".small-cup.filled").length
-    quantity.style.height=quantity.innerText=`${fullCups*12.5}%`
-    cupText.style.height=`${100-fullCups*12.5}%`
-    liter.innerText=`${2-fullCups*0.25}L`
+function updateBigCup() {
+    const filledCups = document.querySelectorAll(".small-cup.filled").length
+
+    labelEl.style.height = `${100-12.5*filledCups}%`
+    remainEl.innerText = `${2-(0.25*filledCups)}L`
+    waterEl.innerText = waterEl.style.height= `${12.5*filledCups}%`
+
+    
 }

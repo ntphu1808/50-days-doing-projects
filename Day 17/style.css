@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+:root {
+    --primary-color: #22254b;
+    --secondary-color: #373b69;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+img {
+    width: 100%;
+}
+h3 {
+    margin: 30px 0;
+    font-size: 1.4rem;
+}
+/*================= Structure ===================== */
+header {
+    height: 80px;
+    padding-right: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+.search {
+    width: 250px;
+    height: 40px;
+    padding: 10px;
+}
+.container {
+    padding: 20px;
+}
+.movies-container {
+    max-width: 1500px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+}
+.poster {
+    height: 530px;
+}
+.title-rating {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    padding: 15px;
+    height: 100px;
+    align-self: end;
+}
+.movie {
+    position: relative;
+    overflow: hidden;
+    display: grid;
+}
+.overview {
+    position: absolute;
+    background-color: white;
+    padding: 25px;
+    top: 100%;
+}
+.movie:hover > .overview {
+    transform: translateY(-100%);
+}
+/*=======================skinning=======================*/
+
+header {
+    background-color: var(--secondary-color);
+}
+.search {
+    background-color: transparent;
+    color: white;
+    border: var(--primary-color) 2px solid;
+    border-radius: 50px;
+    outline: none;
+    font-size: 1.1rem;
+}
+.search::placeholder {
+    color: slategray;
+}
+.search:focus {
+    background-color: var(--primary-color);
+
+}
+.container {
+    background-color: var(--primary-color);
+}
+.title-rating {
+    background-color: var(--secondary-color);
+}
+.title {
+    color: white;
+    font-size: 1.3rem;
+}
+.rating {
+    font-size: 1.3rem;
+    font-weight: bold;
+    background-color: var(--primary-color);
+    width: fit-content;
+    height: fit-content;
+    padding: 10px 15px;
+    justify-self: right;
+    border-radius: 5px;
+}
+.overview {
+    transition: transform 0.2s linear;
+}
+.content {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    word-spacing: 3px;
+}
