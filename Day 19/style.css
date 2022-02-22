@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+:root {
+    --dark-color: #000;
+    --light-color: #fff;
+}
+html.dark {
+    --dark-color: #fff;
+    --light-color: #000;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100vh;
+    background-color: var(--light-color);
+    transition: all 1s ease;
+}
+* {
+    box-sizing: border-box;
+}
+/* ========Structure============*/
+.mode {
+    border: 0;
+    padding: 5px 15px;
+    border-radius: 5px;
+}
+.clock {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+}
+.needle {
+    width: 3px;
+    height: 100px;
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    transform: translateX(-50%);
+}
+.needle-hour {
+    height: 60px;
+}
+.needle-minute {
+    transform: translateX(-100%);
+}
+.circle {
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    transform: translate(-35%, -50%);
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+}
+
+/* =========skinning============*/
+button.mode {
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    cursor: pointer;
+    transition: all 1s ease;
+}
+div.needle {
+    background-color: var(--dark-color);
+    transform-origin: bottom center;
+    transition: all 0.5s ease;
+}
+div.needle-second {
+    background-color: red;
+    z-index: 1;
+}
+.circle {
+    border-radius: 50%;
+    border: red 3px solid;
+    background-color: var(--dark-color);
+    transition: all 0.5s ease;
+}
+.time {
+    font-size: 3rem;
+    color: var(--dark-color);
+    transition: all 1s ease;
+}
+.day {
+    font-size: 0.8rem;
+    color: grey;
+    text-transform: uppercase;
+}
+.day-of-month {
+    background-color: var(--dark-color);
+    border-radius: 50%;
+    color: var(--light-color);
+    padding: 2px;
+    transition: all 1s ease;
+}

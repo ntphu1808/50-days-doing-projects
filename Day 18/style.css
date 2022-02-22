@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    display: grid;
+    text-align: center;
+    align-content: center;
+}
+* {
+    box-sizing: border-box;
+}
+.container {
+    width: 100vw;
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.4s;
+}
+.container::after {
+    content: '';
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.slider-container {
+    width: 70vw;
+    height: 70vh;
+    box-shadow: 0 0 1px 1px #333;
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+}
+.slider {
+    width: 100vw;
+    height: 100vh;
+    background-position: center center;    /*these properties need to be set up so the small image will work out */
+    background-size: cover;                /* same as above  */
+    opacity: 0;
+    position: absolute;
+    top: -15vh;
+    left: -15vw;
+    transition: opacity 0.3s ease;
+}
+.slider.active {
+    opacity: 1;
+}
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 80px;
+    height: 80px;
+    background-color: transparent;
+    color: orange;
+    font-size: 2.5rem;
+    border: orange 1px solid;
+    cursor: pointer;
+    outline: 0;
+}
+.left-arrow {
+    left: calc(15vw - 80px);
+    border-right: 0;
+}
+.right-arrow {
+    right: calc(15vw - 80px);
+    border-left: 0;
+}
