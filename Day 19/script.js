@@ -27,19 +27,17 @@ let second = 0
 let minute = 0
 let hour = 0
 
-let minuteFlag = true
-let hourFlag = true
-
-const interval = setInterval(updatedateTime, 1000)
+updatedateTime()
+const interval = setInterval(updatedateTime, 999)
 
 
 function updatedateTime() {
     const dateTime = new Date()
-    hourNeedle.style.transform = `rotate(${getDegFromHour(dateTime.getHours())}deg)`
-    minuteNeedle.style.transform = `rotate(${getDegFromMinute(dateTime.getMinutes())}deg)`
     secondNeedle.style.transform = `rotate(${getDegFromSecond(dateTime.getSeconds())}deg)`
+    minuteNeedle.style.transform = `rotate(${getDegFromMinute(dateTime.getMinutes())}deg)`
+    hourNeedle.style.transform = `rotate(${getDegFromHour(dateTime.getHours())}deg)`
     hourEl.innerText = dateTime.getHours()
-    minuteEl.innerText = dateTime.getMinutes()
+    minuteEl.innerText = `${dateTime.getMinutes() < 10 ? "0" + dateTime.getMinutes() : dateTime.getMinutes()}`
     stateEl.innerText = `${dateTime.getHours() < 12 ? "AM" : "PM"}`
     dayOfWeek_El.innerText = dayList[dateTime.getDay()]
     dayOfMonth_El.innerText = dateTime.getDate()
@@ -47,21 +45,15 @@ function updatedateTime() {
 }
 
 function getDegFromHour(value) {
-    if (value%12 === 0 && hourFlag === true) {  // we use flag to check when the hour is 0 then the hour won't be added 12 every one second
+    if (value%12 === 0 && minute%60 === 0 && second%60 === 0) {  // we use flag to check when the hour is 0 then the hour won't be added 12 every one second
         hour+=12
-        hourFlag = false
-    } else if (value%12 !== 0) {
-        hourFlag = true
     }
     return (hour+value%12)*360/12
 }
 
 function getDegFromMinute(value) {
-    if (value === 0 && minuteFlag === true) { // when the minute is 0 then every second passess then the minute will be added 60, we use flag here to prevent that.
+    if (value === 0 && second%60 === 0) { // when the minute is 0 then every second passess then the minute will be added 60, we use flag here to prevent that.
         minute+=60
-        minuteFlag = false
-    } else if (value !== 0) {
-        minuteFlag = true
     }
     return (minute+value)*360/60
 }
