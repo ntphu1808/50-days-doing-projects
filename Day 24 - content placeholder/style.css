@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    background-color: #e5e5e5;
+    height: 100vh;
+}
+* {
+    box-sizing: border-box;
+}
+.header__img, .author__avatar {
+    width: 100%;
+    height: 100%;
+}
+.card {
+    box-shadow: 0 0 6px 3px rgba(0, 0, 0, 0.3); 
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 350px;
+}
+.card__header {
+    height: 200px;
+}
+.card__content {
+    padding: 30px;
+}
+.content__author {
+    display: flex;
+    column-gap: 10px;
+}
+.author__avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.author__detail {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.content__header {
+    font-size: 1.2rem;
+    margin: 0;
+}
+.content__paragraph {
+    margin: 10px 0 10px 0;
+    font-size: 0.9rem;
+    color: grey;
+}
+.detail__name {
+    font-weight: bold;
+}
+.detail__date {
+    color: grey;
+    font-size: 0.8rem;
+}
+
+/*==========================background placeholder=============== */
+.background-placeholder {
+    background-image: linear-gradient(
+        to right,
+        #f6f7f8 0%,
+        #edeef1 10%,
+        #f6f7f8 20%,
+        #f6f7f8 100%
+    );
+    background-size: 200% 100%;
+    animation: bgPos 1s linear infinite;
+}
+.background-placeholder.content__header, 
+.background-placeholder.content__paragraph {
+    height: 1.2rem;
+    width: 100%;
+    border-radius: 10px;
+}
+.background-placeholder.detail__name,
+.background-placeholder.detail__date {
+    height: 1.2rem;
+    width: 100px;
+    border-radius: 10px;
+}
+
+@keyframes bgPos {
+    0% {
+      background-position: 50% 0;
+    }
+  
+    100% {
+      background-position: -150% 0;
+    }
+  } 
+  

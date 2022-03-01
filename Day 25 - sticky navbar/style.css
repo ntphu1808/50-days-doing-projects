@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+/*=========Structure============== */
+/*navbar*/
+.sticky-navbar {
+    width: 100%;
+    background-color: #333;
+    padding: 20px 0;
+    position: fixed;
+    transition: all 0.4s ease-in-out;
+    box-shadow: 1px 1px 10px rgba(0,0,0, 0.5);
+}
+.sticky-navbar.active {
+    padding: 10px 0;
+    background-color: white;
+}
+.navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navbar__ul {
+    list-style-type: none;
+    display: flex;
+}
+/*header*/
+header {
+    width: 100%;
+}
+.header-container {
+    width: 100%;
+    height: 100vh;
+    background-image: url("https://images.pexels.com/photos/450035/pexels-photo-450035.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+    background-size: cover;
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    z-index: -2;
+}
+.header-container::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0, 0.6);
+    z-index: -1;
+}
+.section-container {
+    padding: 0 10px;
+}
+
+/*==============skinning===========*/
+/* navbar */
+.nav-link {
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px;
+    transition: all 0.4s ease-in-out;
+}
+.active .nav-link {
+    color: black;
+}
+.nav-link:hover , a.nav-link.current {
+    color: red
+}
+.logo__link {
+    font-size: 1.3rem;
+    white-space: nowrap;
+} 
+
+/*header */
+.header__title, .header__text {
+    color: white;
+    margin: 10px 0;
+}
+/* section */
+
+.section__title {
+    font-size: 1.5rem;
+    margin: 20px 0;
+}
+.section__text {
+    word-spacing: 5px;
+    line-height: 30px;
+    letter-spacing: 1px;
+}
